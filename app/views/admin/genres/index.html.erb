@@ -1,2 +1,27 @@
-<h1>Admin::Genres#index</h1>
-<p>Find me in app/views/admin/genres/index.html.erb</p>
+  <%= render "admin/shared/error_messages", resource: @genre %>
+
+<div class="row justify-content-center mb-5">
+  <h1><span class="title">ジャンル一覧・追加</span></h1>
+</div>
+
+<div class="row justify-content-center">
+  <%= form_with model: @genre, url: admin_genres_path, method: :post do |f| %>
+    <div class="d-flex">
+      <div class="class mr-2"><%= f.text_field :name, placeholder: "ジャンル名" %></div>
+      <div><%= f.submit "新規登録", class: "btn btn-outline-success" %></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row justify-content-center mb-5">
+  <div class="form-box col-6 mt-5">
+    <!--タグ検索-->
+    <% @genres.each do |genre| %>
+      <!--[:tag_ids]だけだと、他の[tag_ids]と区別がつかないので、[:tag_ids, t.name]としている-->
+      <div class="form-check-label m-2">
+        <%= genre.name %>
+        <!--<#%= link_to "削除する", admin_genre_path(genre.id), method: :delete, class: "btn btn-outline-danger", data: { confirm: "本当に削除しますか？" } %>-->
+      </div>
+    <% end %>
+  </div>
+</div>
