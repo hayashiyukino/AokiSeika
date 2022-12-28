@@ -1,15 +1,13 @@
 <section class="inner">
-	<h2 class="section-ttl">ジャンル管理</h2>
-	<div class="mb3">
-		<h3>ジャンル新規登録</h3>
-  	<%= render 'form', genre: @genre, url: admin_genres_path, submit: '登録' %>
+	<h3 class="section-ttl mb-5">ジャンル一覧・追加</h3>
+	<div class="row mb-3">
+  	<%= render 'form', genre: @genre, url: admin_genres_path, submit: '新規登録' %>
 	</div>
-	<div class="mb3">
-		<h3>ジャンル一覧</h3>
+	<div class="row">
 		<table class="genre_info has_border">
 			<thead>
-				<tr>
-					<th>ジャンル名</th>
+				<tr class=style="background-color: #f5f5f5">
+					<th>ジャンル</th>
 					<!--<th>状態</th>-->
 					<th></th>
 				</tr>
