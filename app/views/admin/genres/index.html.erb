@@ -1,0 +1,32 @@
+<section class="inner">
+	<h3 class="section-ttl">ジャンル一覧・追加</h3>
+	<div class="row mb-3">
+  	<%= render 'form', genre: @genre, url: admin_genres_path, submit: '新規登録' %>
+	</div>
+	<div class="row">
+		<table class="table table-hover table-inverse col-md-4">
+			<thead>
+				<tr style="background-color: #f5f5f5">
+					<th>ジャンル</th>
+					<!--<th>状態</th>-->
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @genres.each do |genre| %>
+					<tr>
+						<td><%= link_to genre.name, admin_items_path(genre_id: genre.id), class: "underline" %></td>
+						<!--<td>-->
+						<!--	<#% if genre.is_active? %>-->
+						<!--		<span class="text-active">有効</span>-->
+						<!--	<#% else %>-->
+						<!--		<span class="text-invalid">無効</span>-->
+						<!--	<#% end %>-->
+						<!--</td>-->
+						<td class="text-center"><%= link_to "編集", edit_admin_genre_path(genre), class: "btn btn-success" %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</section>
