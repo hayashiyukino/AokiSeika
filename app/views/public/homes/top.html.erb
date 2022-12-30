@@ -1,2 +1,22 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="row">
+  <div class="col-lg-4" style="background-color: orange;">
+    <ul class="list-group">
+    <h5 class="list-title">ジャンル検索</h5>
+      <% @genres.each do |genre| %>
+        <li class="list-group-item">
+          <%= genre.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-lg-8" style="background-color: red;">
+    <div class="text">
+      <p class="">
+        ようこそ、ながのCAKEへ!<br>
+        このサイトは、ケーキ販売のECサイトになります。<br>
+        会員ではない方も商品の閲覧はできますが、<br>
+        購入には会員登録が必要になります。
+      </p>
+    </div>
+  </div>
+</div>
