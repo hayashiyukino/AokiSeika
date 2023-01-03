@@ -1,12 +1,16 @@
 <h3 class="section-ttl">商品新規登録</h3>
+<div class="row">
   <div class="row">
-    <div class="">商品画像</div>
-    <div class="">商品名</div>
-    <div class="">商品説明</div>
-    <div class="">ジャンル</div>
-    <div class="">税抜価格</div>
-    <div class="">販売ステータス</div>
+    <div class="col-12">
+      <div class="">商品画像</div>
+      <div class="">商品名</div>
+      <div class="">商品説明</div>
+      <div class="">ジャンル</div>
+      <div class="">税抜価格</div>
+      <div class="">販売ステータス</div>
+    </div>
   </div>
+
   <div class="row">
     <div class="col-md-8">
     <%= form_with model: @item, url: admin_items_path, method: :post do |f| %>
@@ -20,11 +24,10 @@
         <%= f.label :販売中%>
         <%= f.radio_button :is_active, false %>
         <%= f.label :販売停止中, false %>
-      </div>
       <div class= "col-md-8 offset-md-4 action">
       <%= f.submit '新規登録', class: "btn btn-success" %>
       </div>
     <% end %>
     </div>
   </div>
-
+</div>
