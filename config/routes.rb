@@ -16,6 +16,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 ## 顧客側ルート
 scope module: :public do
   root 'homes#top'
+  get '/about' => '/homes#about'
     get 'customers/mypage' => 'customers#show', as: 'mypage'
     # customers/editのようにするとdeviseのルーティングとかぶってしまうためinformationを付け加えている。
     get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
